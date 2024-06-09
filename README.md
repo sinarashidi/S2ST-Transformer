@@ -19,9 +19,11 @@ import torchaudio
 from inference import S2STInference
 from speechbrain.inference.vocoders import UnitHIFIGAN
 
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
 s2st = S2STInference.from_hparams(source="sinarashidi/s2st_fa-en_augmented", savedir="tmpdir_s2st", run_opts={'device': device})
 hifi_gan_unit = UnitHIFIGAN.from_hparams(source="sinarashidi/unit_hifigan_ljspeech", savedir="tmpdir_vocoder", run_opts={'device': device})
-codes = s2st.translate_file("sinarashidi/s2st_fa-en_augmented/audio/test2.mp3")
+codes = s2st.translate_file("audio/test2.mp3")
 codes = torch.IntTensor(codes)
 
 waveforms = hifi_gan_unit.decode_unit(codes)
