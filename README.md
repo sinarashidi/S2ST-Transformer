@@ -11,7 +11,7 @@ The model is built using [Speechbrain](https://github.com/speechbrain/speechbrai
 ![model](https://github.com/sinarashidi/S2ST-Transformer/assets/97125780/88376e8a-63a0-49af-8972-5b1bad1e58ac)
 
 ## Inference
-You can use the [Inference Notebook](inference.ipynb) for inference with the pre-trained model or directly use the inference class implemented in the [Inference File](inference.py).
+You can use the [Inference Notebook](inference.ipynb) or directly use the inference class implemented in the [Inference File](inference.py) for inference with the pre-trained model.
 
 ## Training
 Steps for training:
